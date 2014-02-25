@@ -3,7 +3,7 @@
         {
             "id": 1,
             "Question": {
-                "Question": "Who has scored the most runs in a single First-class innings?",
+                "Question": "Which former Indian cricketer was nicknamed 'Tiger'?",
                 "AttachedElement": {
                     "Type": 1,
                     "Value": ""
@@ -12,26 +12,26 @@
             "Options": [
                 {
                     "Type": 1,
-                    "Value": "Hanif Mohammad"
+                    "Value": "Salim Durrani"
                 },
                 {
                     "Type": 1,
-                    "Value": "Brian Lara"
+                    "Value": "Farooq Engineer"
                 },
                 {
                     "Type": 1,
-                    "Value": "Don Bradman"
+                    "Value": "Vijay Hazare"
                 },
                 {
                     "Type": 1,
-                    "Value": "Sachin Tendulkar"
+                    "Value": "Mansur Ali Khan Pataudi"
                 }
             ]
         },
         {
             "id": 2,
             "Question": {
-                "Question": "Dizzy' is the nickname of which Australian player?",
+                "Question":"Who was named as the ICC Emerging Player of the Year 2004?",
                 "AttachedElement": {
                     "Type": 1,
                     "Value": ""
@@ -40,19 +40,19 @@
             "Options": [
                 {
                     "Type": 1,
-                    "Value": "Adam Gilchrist"
+                    "Value": "Piyush Chawla"
                 },
                 {
                     "Type": 1,
-                    "Value": "Glenn McGrath"
+                    "Value": "Gautam Gambhir"
                 },
                 {
                     "Type": 1,
-                    "Value": "Jason Gillespie"
+                    "Value": "Irfan Pathan"
                 },
                 {
                     "Type": 1,
-                    "Value": "Brett Lee"
+                    "Value": "Suresh Raina"
                 }
             ]
         }
@@ -60,7 +60,7 @@
     "Answers": [
         {
             "QuestionId": 1,
-            "Answer": 2
+            "Answer": 4
         },
         {
             "QuestionId": 2,

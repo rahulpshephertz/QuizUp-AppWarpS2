@@ -1,0 +1,70 @@
+{
+    "Questions": [
+        {
+            "id": 1,
+            "Question": {
+                "Question": "In what year was Rajiv Gandhi assassinated?",
+                "AttachedElement": {
+                    "Type": 1,
+                    "Value": ""
+                }
+            },
+            "Options": [
+                {
+                    "Type": 1,
+                    "Value": "1990"
+                },
+                {
+                    "Type": 1,
+                    "Value": "1991"
+                },
+                {
+                    "Type": 1,
+                    "Value": "1992"
+                },
+                {
+                    "Type": 1,
+                    "Value": "1993"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "Question": {
+                "Question": "Who was the leader of the Dalit Movement in India?",
+                "AttachedElement": {
+                    "Type": 1,
+                    "Value": ""
+                }
+            },
+            "Options": [
+                {
+                    "Type": 1,
+                    "Value": "Dr. B R Ambedkar"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Mahatma Gandhi"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Pt. Nehru"
+                },
+                {
+                    "Type": 1,
+                    "Value": "None of the above"
+                }
+            ]
+        }
+    ],
+    "Answers": [
+        {
+            "QuestionId": 1,
+            "Answer": 1
+        },
+        {
+            "QuestionId": 2,
+            "Answer": 1
+        }
+    ]
+}

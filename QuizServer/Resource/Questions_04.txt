@@ -3,7 +3,7 @@
         {
             "id": 1,
             "Question": {
-                "Question": "In what year was Rajiv Gandhi assassinated?",
+                "Question": "What name is given to Test matches between Australia and England?",
                 "AttachedElement": {
                     "Type": 1,
                     "Value": ""
@@ -12,26 +12,26 @@
             "Options": [
                 {
                     "Type": 1,
-                    "Value": "1990"
+                    "Value": "World Championship"
                 },
                 {
                     "Type": 1,
-                    "Value": "1991"
+                    "Value": "Ashes"
                 },
                 {
                     "Type": 1,
-                    "Value": "1992"
+                    "Value": "Pinnacle"
                 },
                 {
                     "Type": 1,
-                    "Value": "1993"
+                    "Value": "Super bowl"
                 }
             ]
         },
         {
             "id": 2,
             "Question": {
-                "Question": "Who was the leader of the Dalit Movement in India?",
+                "Question": "Both arms outstretched by the umpire means?",
                 "AttachedElement": {
                     "Type": 1,
                     "Value": ""
@@ -40,19 +40,19 @@
             "Options": [
                 {
                     "Type": 1,
-                    "Value": "Dr. B R Ambedkar"
+                    "Value": "A no ball"
                 },
                 {
                     "Type": 1,
-                    "Value": "Mahatma Gandhi"
+                    "Value": "A wide ball"
                 },
                 {
                     "Type": 1,
-                    "Value": "Pt. Nehru"
+                    "Value": "A dead ball"
                 },
                 {
                     "Type": 1,
-                    "Value": "None of the above"
+                    "Value": "Leg bye"
                 }
             ]
         }
@@ -60,11 +60,11 @@
     "Answers": [
         {
             "QuestionId": 1,
-            "Answer": 1
+            "Answer": 2
         },
         {
             "QuestionId": 2,
-            "Answer": 1
+            "Answer": 2
         }
     ]
 }

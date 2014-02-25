@@ -1,8 +1,10 @@
 {
 	"TickTime" : 500,
-	"LogLevel" : "WARN",
+	"LogLevel" : "INFO",
+	"DBHost" : "local",
+	"DBUser" : "root",
+	"DBPassword" : "",
 	"AdminUsername" : "admin",
 	"AdminPassword" : "password",
-	"HSQLDBFile" : "HSQLDBFile",
-	"LICENSE_KEY" : ""
+	"HSQLDBFile" : "HSQLDBFile"
 }

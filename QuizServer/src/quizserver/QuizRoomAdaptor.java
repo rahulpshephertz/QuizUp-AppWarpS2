@@ -37,7 +37,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
     private byte GAME_STATUS;
     private byte QUIZ_TYPE = QuizType.POLITICS;
     private int StartQuizFlag = 0;
-
+    private boolean HasAnyUserLeftTheRoom=false;
     public QuizRoomAdaptor(IZone izone, IRoom room) {
         this.izone = izone;
         this.gameRoom = room;
@@ -56,7 +56,9 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
 
     @Override
     public void onUserLeaveRequest(IUser user) {
-        System.out.println(user.getName() + " left room " + user.getLocation().getId());
+        StartQuizFlag = 0;
+        HasAnyUserLeftTheRoom=true;
+        System.out.println("QuizRoomAdaptor onUserLeaveRequest " + user.getName() + " left room " + user.getLocation().getId());
         UserStatusList.clear();
     }
 
@@ -87,7 +89,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
             switch (bt) {
                 case QuizRequestCode.STARTQUIZ:
                     StartQuizFlag++;
-                    System.out.println("Received Start Quiz Packet" + StartQuizFlag +"RoomId "+this.gameRoom.getId());
+                    System.out.println("Received Start Quiz Packet" + StartQuizFlag + "RoomId " + this.gameRoom.getId());
                     break;
                 case QuizRequestCode.ANSWERPACKET:
                     System.out.println("Answer Received " + bt);
@@ -124,37 +126,38 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
          * or we can say max users are equals to joined users
          * Once the game has started it will send question on every 10 seconds
          */
+       try {
+        if (HasAnyUserLeftTheRoom) {
+            HasAnyUserLeftTheRoom=false;
+            System.out.println("Deleting Room " + this.gameRoom.getId() + " " + this.izone.deleteRoom(gameRoom.getId()));
+            GAME_STATUS = QuizConstants.STOPPED;
+        }
         if (GAME_STATUS == QuizConstants.STOPPED && gameRoom.getJoinedUsers().size() == gameRoom.getMaxUsers() && gameRoom.getMaxUsers() == StartQuizFlag) {
             GAME_STATUS = QuizConstants.RUNNING;
             SendQuestion();
             StartQuizFlag = 0;
         } else if (GAME_STATUS == QuizConstants.RUNNING) {
-            if (UserStatusList.size() < gameRoom.getMaxUsers()) {
-               UserStatusList.clear();
-               System.out.println("Delete Room "+this.gameRoom.getId()+" "+ this.izone.deleteRoom(gameRoom.getId()));
-               GAME_STATUS = QuizConstants.STOPPED;
-            } else {
-                QuizTimerCount++;
-                try {
-                    if (GameCurrentLevel < Utils.LevelJson.length()) {
-                        int timeCount = Utils.LevelJson.getJSONObject(GameCurrentLevel).getInt("timePerQuestion") * 2;
-                        if (QuizTimerCount == timeCount) {
-                            int totalQuestion = Utils.LevelJson.getJSONObject(GameCurrentLevel).getInt("totalQuestions");
-                            if (GameCurrentQuestion < (totalQuestion - 1)) {
-                                if (GameCurrentQuestion != -1) {
-                                    AddDefaultAnswers();
-                                }
-                                SendQuestion();
-                            } else {
-                                SendLevelEndPacket();
+            QuizTimerCount++;
+           
+                if (GameCurrentLevel < Utils.LevelJson.length()) {
+                    int timeCount = Utils.LevelJson.getJSONObject(GameCurrentLevel).getInt("timePerQuestion") * 2;
+                    if (QuizTimerCount == timeCount) {
+                        int totalQuestion = Utils.LevelJson.getJSONObject(GameCurrentLevel).getInt("totalQuestions");
+                        if (GameCurrentQuestion < (totalQuestion - 1)) {
+                            if (GameCurrentQuestion != -1) {
+                                AddDefaultAnswers();
                             }
+                            SendQuestion();
+                        } else {
+                            SendLevelEndPacket();
                         }
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
             }
         }
+        catch (Exception e) {
+                e.printStackTrace();
+            }
     }
 
     private void AddDefaultAnswers() {

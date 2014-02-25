@@ -31,6 +31,16 @@ public class QuizZoneAdaptor extends BaseZoneAdaptor {
         this.zone = zone;
     }
 
+    @Override 
+    public void onUserRemoved(IUser user){
+        System.out.println("QuizZoneAdaptor onUserRemoved "+user.getName());
+        IRoom room = user.getLocation();
+        if(room!=null){
+            QuizRoomAdaptor adaptor = (QuizRoomAdaptor) room.getAdaptor();
+            adaptor.onUserLeaveRequest(user);
+        }
+    }
+    
     @Override
     public void onAdminRoomAdded(IRoom room) {
         System.out.println("Room Created " + room.getName() + " with ID " + room.getId());

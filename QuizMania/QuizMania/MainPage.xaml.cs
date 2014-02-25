@@ -233,20 +233,16 @@ namespace QuizMania
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            App.CurrentPage="HomePage";
             if ((e.NavigationMode == NavigationMode.Back) && GlobalContext.IsConnectedToAppWarp)
             {
                 btnConnect.IsEnabled = false;
-                if (!GlobalContext.GameRoomId.Equals(""))
-                {
-                    WarpClient.GetInstance().LeaveRoom(GlobalContext.GameRoomId);
-                    WarpClient.GetInstance().DeleteRoom(GlobalContext.GameRoomId);
-                }
-                WarpClient.GetInstance().Disconnect();
+               // WarpClient.GetInstance().Disconnect();
             }
-            if (DBManager.getInstance().isDBAvailable(DBManager.DB_Profile))
-            {
-                // btnLogout.Visibility = Visibility.Visible;
-            }
+            //if (DBManager.getInstance().isDBAvailable(DBManager.DB_Profile))
+            //{
+            //    // btnLogout.Visibility = Visibility.Visible;
+            //}
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -320,6 +316,14 @@ namespace QuizMania
         public void ClosePopup()
         {
             messageGrid.Visibility = Visibility.Collapsed;
+        }
+
+
+        public void ConnectionFailed()
+        {
+            messageGrid.Visibility = Visibility.Collapsed;
+            MessageBox.Show("Connection failed");
+            DisconnectCallback();
         }
     }
 }

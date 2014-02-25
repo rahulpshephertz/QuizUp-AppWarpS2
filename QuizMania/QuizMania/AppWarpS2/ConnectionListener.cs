@@ -38,10 +38,10 @@ namespace QuizMania
                      Deployment.Current.Dispatcher.BeginInvoke(delegate(){RecoverConnection();});
                       break;
                 case WarpResponseResultCode.SUCCESS_RECOVERED:
-                   
                      break;
                 default:
-                      Deployment.Current.Dispatcher.BeginInvoke(delegate() { App.g_HomePageListener.DisconnectCallback(); });
+                     if(App.CurrentPage.Equals("HomePage"))
+                      Deployment.Current.Dispatcher.BeginInvoke(delegate() { App.g_HomePageListener.ConnectionFailed(); });
                       GlobalContext.IsConnectedToAppWarp = false;
                       break;
             
@@ -77,7 +77,11 @@ namespace QuizMania
             else
             {
                 (sender as DispatcherTimer).Stop();
-                Deployment.Current.Dispatcher.BeginInvoke(delegate() { App.g_HomePageListener.DisconnectCallback(); });
+                if (App.CurrentPage.Equals("HomePage"))
+                Deployment.Current.Dispatcher.BeginInvoke(delegate() 
+                { 
+                    App.g_HomePageListener.DisconnectCallback(); 
+                });
                 GlobalContext.IsConnectedToAppWarp = false;
             }
             
@@ -85,7 +89,12 @@ namespace QuizMania
 
         public void onDisconnectDone(ConnectEvent eventObj)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(delegate() { GlobalContext.IsConnectedToAppWarp = false; App.g_HomePageListener.DisconnectCallback(); });
+            Deployment.Current.Dispatcher.BeginInvoke(delegate() 
+            { 
+                GlobalContext.IsConnectedToAppWarp = false; 
+                if (App.CurrentPage.Equals("HomePage"))
+                    App.g_HomePageListener.DisconnectCallback(); 
+            });
         }
 
 

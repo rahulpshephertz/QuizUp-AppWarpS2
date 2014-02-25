@@ -26,6 +26,7 @@ namespace QuizMania
         public static QuizPageListener g_QuizPageListener;
         public static HomePageListener g_HomePageListener;
         public static bool IsItFAS = false;
+        public static String CurrentPage = "HomePage";
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>

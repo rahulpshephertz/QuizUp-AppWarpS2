@@ -38,6 +38,7 @@ namespace QuizMania
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(delegate() { App.g_QuizPageListener.OpponentLeftRoom(); });
                 }
+                WarpClient.GetInstance().Disconnect();
             }
         }
 

@@ -79,6 +79,7 @@ namespace QuizMania
         public void onLeaveRoomDone(RoomEvent eventObj)
         {
             Debug.WriteLine("On Leave Room Done"+eventObj.getResult());
+            WarpClient.GetInstance().Disconnect();
             if (eventObj.getResult() == WarpResponseResultCode.SUCCESS)
             {
                 GlobalContext.opponentName = "No Opponent";
@@ -87,19 +88,22 @@ namespace QuizMania
 
         public void onGetLiveRoomInfoDone(LiveRoomInfoEvent liveRoomInfoObj)
         {
-            GlobalContext.tableProperties = liveRoomInfoObj.getProperties();
-            if ((liveRoomInfoObj.getJoinedUsers().Length == 2))
+            if (liveRoomInfoObj.getData() != null)
             {
-                if (liveRoomInfoObj.getJoinedUsers()[0].Equals(GlobalContext.localUsername))
+                GlobalContext.tableProperties = liveRoomInfoObj.getProperties();
+                if ((liveRoomInfoObj.getJoinedUsers().Length == 2))
                 {
-                    GlobalContext.opponentName = liveRoomInfoObj.getJoinedUsers()[1];
+                    if (liveRoomInfoObj.getJoinedUsers()[0].Equals(GlobalContext.localUsername))
+                    {
+                        GlobalContext.opponentName = liveRoomInfoObj.getJoinedUsers()[1];
+                    }
+                    else
+                    {
+                        GlobalContext.opponentName = liveRoomInfoObj.getJoinedUsers()[0];
+                    }
+                    Debug.WriteLine("get Live RoomInfo");
+                    Deployment.Current.Dispatcher.BeginInvoke(delegate() { App.g_HomePageListener.StartQuiz(); });
                 }
-                else
-                {
-                    GlobalContext.opponentName = liveRoomInfoObj.getJoinedUsers()[0];
-                }
-                Debug.WriteLine("get Live RoomInfo");
-               Deployment.Current.Dispatcher.BeginInvoke(delegate() { App.g_HomePageListener.StartQuiz(); });
             }
         }
 

@@ -108,7 +108,6 @@ namespace QuizMania
                                 if (!GlobalContext.GameRoomId.Equals(""))
                                 {
                                     WarpClient.GetInstance().LeaveRoom(GlobalContext.GameRoomId);
-                                    WarpClient.GetInstance().DeleteRoom(GlobalContext.GameRoomId);
                                     WarpClient.GetInstance().JoinRoom(fbInvite.RoomId);
                                 }
                                 else

@@ -10,6 +10,7 @@ namespace QuizMania.QuizModels
         void ClosePopup();
         void StartQuiz();
         void DisconnectCallback();
+        void ConnectionFailed();
         void FBFriendList(List<FBFriend> fbFriendList);
     }
 }

@@ -26,6 +26,7 @@ namespace QuizMania
         Storyboard mCorrectStoryboard, mWrongStoryboard;
         int _quizTimeCount = 10, lastAnswerClient = -1;
         bool hasAnswered = false;
+        bool hasOpponentLeftTheRoom;
         public quizpage()
         {
             InitializeComponent();
@@ -244,16 +245,10 @@ namespace QuizMania
         }
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            //if (GlobalContext.MaxUsersInRoom == 1)
-            //{
-            //    rmtStackPanel.Visibility = Visibility.Collapsed;
-            //}
-            //else
-            //{
-                popupMessage.Text = "Waiting for an opponent..";
-                MessagePopup.Visibility = Visibility.Visible;
-                rmtStackPanel.Visibility = Visibility.Visible;
-           // }
+            App.CurrentPage = "QuizPage";
+            popupMessage.Text = "Waiting for an opponent..";
+            MessagePopup.Visibility = Visibility.Visible;
+            rmtStackPanel.Visibility = Visibility.Visible;
             if (App.IsItFAS)
             {
                 App.IsItFAS = false;
@@ -263,8 +258,10 @@ namespace QuizMania
         }
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
-            WarpClient.GetInstance().LeaveRoom(GlobalContext.GameRoomId);
-            WarpClient.GetInstance().DeleteRoom(GlobalContext.GameRoomId);
+            if (!hasOpponentLeftTheRoom)
+            {
+                WarpClient.GetInstance().LeaveRoom(GlobalContext.GameRoomId);
+            }
             base.OnNavigatedFrom(e);
         }
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
@@ -364,6 +361,7 @@ namespace QuizMania
 
         void QuizPageListener.OpponentLeftRoom()
         {
+            hasOpponentLeftTheRoom = true;
             popupMessage.Text = "Opponent has left,Please select back and start new quiz";
             MessagePopup.Visibility = Visibility.Visible;
         }

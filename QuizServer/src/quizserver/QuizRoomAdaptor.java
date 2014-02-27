@@ -134,7 +134,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
         }
         if (GAME_STATUS == QuizConstants.STOPPED && gameRoom.getJoinedUsers().size() == gameRoom.getMaxUsers() && gameRoom.getMaxUsers() == StartQuizFlag) {
             GAME_STATUS = QuizConstants.RUNNING;
-            SendQuestion();
+            QuizTimerCount=Utils.LevelJson.getJSONObject(GameCurrentLevel).getInt("timePerQuestion") * 2-1;
             StartQuizFlag = 0;
         } else if (GAME_STATUS == QuizConstants.RUNNING) {
             QuizTimerCount++;
@@ -143,10 +143,10 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
                     int timeCount = Utils.LevelJson.getJSONObject(GameCurrentLevel).getInt("timePerQuestion") * 2;
                     if (QuizTimerCount == timeCount) {
                         int totalQuestion = Utils.LevelJson.getJSONObject(GameCurrentLevel).getInt("totalQuestions");
-                        if (GameCurrentQuestion < (totalQuestion - 1)) {
-                            if (GameCurrentQuestion != -1) {
+                        if (GameCurrentQuestion != -1) {
                                 AddDefaultAnswers();
                             }
+                        if (GameCurrentQuestion < (totalQuestion - 1)) {
                             SendQuestion();
                         } else {
                             SendLevelEndPacket();
@@ -188,13 +188,13 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
         byte[] questionPacket = getNextQuestionPacket();
         for (int i = 0; i < UserStatusList.size(); i++) {
             UserStatus user = UserStatusList.get(i);
-            System.out.println("Send Question");
+            System.out.println("Sending Question to User "+user.getUser().getName().toString());
             user.getUser().SendUpdatePeersNotification(questionPacket, true);
         }
     }
 
     private void SendLevelEndPacket() {
-        QuizTimerCount = (QuizTimerCount-Utils.delayInBetweenTheLevels);
+        QuizTimerCount = (QuizTimerCount-Utils.delayInBetweenTheLevels*2);
         try {
             JSONArray usersArray = new JSONArray();
             for (int i = 0; i < UserStatusList.size(); i++) {

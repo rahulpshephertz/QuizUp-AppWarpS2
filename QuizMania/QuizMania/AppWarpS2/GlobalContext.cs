@@ -15,8 +15,10 @@ namespace QuizMania
         public static String opponentName="No Opponent";
         public static bool AmIOwner = false;
         //create your game at apphq and find the api key and secret key
-        public static String API_KEY = "";
-        public static String HOST_NAME = "";
+       // public static String API_KEY = "3dfef44f-d2f2-4d2e-9";
+        public static String API_KEY = "b7eb415b-85e2-4ef2-a";
+       // public static String HOST_NAME = "ec2-54-184-101-129.us-west-2.compute.amazonaws.com";
+        public static String HOST_NAME = "192.168.1.73";
         public static String GameRoomId = "";
         public static List<string> joinedUsers=new List<string>();
         public static Dictionary<string, object> tableProperties = null;

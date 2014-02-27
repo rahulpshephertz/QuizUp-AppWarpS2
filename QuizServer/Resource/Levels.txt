@@ -35,5 +35,6 @@
             "pointsPerWrongAnswer": -1,
             "timePerQuestion": 12
         }
-    ]
+    ],
+	"delayInBetweenTheLevels":"5"
 }

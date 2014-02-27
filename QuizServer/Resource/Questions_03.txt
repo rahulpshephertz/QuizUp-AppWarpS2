@@ -27,44 +27,12 @@
                     "Value": "None of the Above"
                 }
             ]
-        },
-        {
-            "id": 2,
-            "Question": {
-                "Question": "Who succeeded  Nehru as Prime Minister?",
-                "AttachedElement": {
-                    "Type": 1,
-                    "Value": ""
-                }
-            },
-            "Options": [
-                {
-                    "Type": 1,
-                    "Value": "Lal Bahadur Shastri"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Gulzari Lal Nanda"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Indira Gandhi"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Morarji Desai"
-                }
-            ]
         }
     ],
     "Answers": [
         {
             "QuestionId": 1,
             "Answer": 2
-        },
-        {
-            "QuestionId": 2,
-            "Answer": 1
         }
     ]
 }

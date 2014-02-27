@@ -24,7 +24,9 @@ public class QuizServer {
         String appconfigPath = System.getProperty("user.dir") + System.getProperty("file.separator") + "AppConfig.json";
         boolean started = AppWarpServer.start(new QuizServerAdaptor(), appconfigPath);
         try {
-            Utils.LevelJson = (Utils.ReadJsonFile("Levels.txt")).getJSONArray("Levels");
+            JSONObject lJson=Utils.ReadJsonFile("Levels.txt");
+            Utils.LevelJson = lJson.getJSONArray("Levels");
+            Utils.delayInBetweenTheLevels=lJson.getInt("delayInBetweenTheLevels");
             for (Integer quiztype = 0; quiztype < Utils.TotalQuizTypes; quiztype++) {
                 Utils.QuestionArrayPerLevel.add(new ArrayList<JSONArray>());
                 Utils.AnswerArrayPerLevel.add(new ArrayList<JSONArray>());

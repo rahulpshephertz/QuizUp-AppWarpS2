@@ -27,34 +27,6 @@
                     "Value": "Mansur Ali Khan Pataudi"
                 }
             ]
-        },
-        {
-            "id": 2,
-            "Question": {
-                "Question":"Who was named as the ICC Emerging Player of the Year 2004?",
-                "AttachedElement": {
-                    "Type": 1,
-                    "Value": ""
-                }
-            },
-            "Options": [
-                {
-                    "Type": 1,
-                    "Value": "Piyush Chawla"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Gautam Gambhir"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Irfan Pathan"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Suresh Raina"
-                }
-            ]
         }
     ],
     "Answers": [

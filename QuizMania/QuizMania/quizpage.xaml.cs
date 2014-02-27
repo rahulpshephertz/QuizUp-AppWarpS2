@@ -127,7 +127,7 @@ namespace QuizMania
             }
             txtLocalUserScore.Text = "0";
             txtRemoteUserScore.Text = "0";
-            _quizTimeCount = 10;
+            _quizTimeCount = 3;
             tblLevelEndCounter.Text = _quizTimeCount.ToString();
             tblLevelNumber.Text = "Level "+(levelNumber+1).ToString();
             for (int i = 0; i < _Scores.Count; i++)

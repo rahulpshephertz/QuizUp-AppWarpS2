@@ -27,44 +27,12 @@
                     "Value": "Sachin Tendulkar"
                 }
             ]
-        },
-        {
-            "id": 2,
-            "Question": {
-                "Question": "Dizzy' is the nickname of which Australian player?",
-                "AttachedElement": {
-                    "Type": 1,
-                    "Value": ""
-                }
-            },
-            "Options": [
-                {
-                    "Type": 1,
-                    "Value": "Adam Gilchrist"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Glenn McGrath"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Jason Gillespie"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Brett Lee"
-                }
-            ]
         }
     ],
     "Answers": [
         {
             "QuestionId": 1,
             "Answer": 2
-        },
-        {
-            "QuestionId": 2,
-            "Answer": 3
         }
     ]
 }

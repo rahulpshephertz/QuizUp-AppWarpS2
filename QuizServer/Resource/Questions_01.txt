@@ -27,44 +27,12 @@
                     "Value": "Lal Bahudar Shastri"
                 }
             ]
-        },
-        {
-            "id": 2,
-            "Question": {
-                "Question": "Which one of the these is not a keyword of Gandhian economy?",
-                "AttachedElement": {
-                    "Type": 1,
-                    "Value": ""
-                }
-            },
-            "Options": [
-                {
-                    "Type": 1,
-                    "Value": "Self-sufficiency"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Decentralized production"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Equitable distribution"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Centralized production"
-                }
-            ]
         }
     ],
     "Answers": [
         {
             "QuestionId": 1,
             "Answer": 2
-        },
-        {
-            "QuestionId": 2,
-            "Answer": 4
         }
     ]
 }

@@ -27,44 +27,12 @@
                     "Value": "Zaheer Abbas"
                 }
             ]
-        },
-        {
-            "id": 2,
-            "Question": {
-                "Question": "How many times has Australia won the Cricket World Cup?",
-                "AttachedElement": {
-                    "Type": 1,
-                    "Value": ""
-                }
-            },
-            "Options": [
-                {
-                    "Type": 1,
-                    "Value": "2"
-                },
-                {
-                    "Type": 1,
-                    "Value": "5"
-                },
-                {
-                    "Type": 1,
-                    "Value": "4"
-                },
-                {
-                    "Type": 1,
-                    "Value": "1"
-                }
-            ]
         }
     ],
     "Answers": [
         {
             "QuestionId": 1,
             "Answer": 4
-        },
-        {
-            "QuestionId": 2,
-            "Answer": 3
         }
     ]
 }

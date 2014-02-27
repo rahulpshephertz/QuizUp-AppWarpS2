@@ -24,6 +24,7 @@ public class Utils {
     public static ArrayList<ArrayList<JSONArray>> QuestionArrayPerLevel = new ArrayList<ArrayList<JSONArray>>();
     public static ArrayList<ArrayList<JSONArray>> AnswerArrayPerLevel = new ArrayList<ArrayList<JSONArray>>();
     public static final int TotalQuizTypes=2;
+    public static int delayInBetweenTheLevels;
     public static JSONObject ReadJsonFile(String path) {
         String JsonFile = "";
         try {

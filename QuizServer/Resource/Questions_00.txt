@@ -27,43 +27,11 @@
                     "Value": "Giani Zail Singh"
                 }
             ]
-        },
-        {
-            "id": 2,
-            "Question": {
-                "Question": "Which Indian politician's original name is Rajeshwar Prasad?",
-                "AttachedElement": {
-                    "Type": 1,
-                    "Value": ""
-                }
-            },
-            "Options": [
-                {
-                    "Type": 1,
-                    "Value": "Rajesh Pilot"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Rajiv Gandhi"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Sanjay Gandhi"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Madhav Rao Scindia"
-                }
-            ]
         }
     ],
     "Answers": [
         {
             "QuestionId": 1,
-            "Answer": 1
-        },
-        {
-            "QuestionId": 2,
             "Answer": 1
         }
     ]

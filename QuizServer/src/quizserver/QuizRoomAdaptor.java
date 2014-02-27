@@ -194,7 +194,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
     }
 
     private void SendLevelEndPacket() {
-        QuizTimerCount = 0;
+        QuizTimerCount = (QuizTimerCount-Utils.delayInBetweenTheLevels);
         try {
             JSONArray usersArray = new JSONArray();
             for (int i = 0; i < UserStatusList.size(); i++) {

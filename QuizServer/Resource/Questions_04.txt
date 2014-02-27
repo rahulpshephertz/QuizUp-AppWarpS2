@@ -3,7 +3,7 @@
         {
             "id": 1,
             "Question": {
-                "Question": "What name is given to Test matches between Australia and England?",
+                "Question": "Which state has the largest Legislative assembly?",
                 "AttachedElement": {
                     "Type": 1,
                     "Value": ""
@@ -12,47 +12,19 @@
             "Options": [
                 {
                     "Type": 1,
-                    "Value": "World Championship"
+                    "Value": "Rajasthan"
                 },
                 {
                     "Type": 1,
-                    "Value": "Ashes"
+                    "Value": "Madhya Pradesh"
                 },
                 {
                     "Type": 1,
-                    "Value": "Pinnacle"
+                    "Value": "Uttar Pradesh"
                 },
                 {
                     "Type": 1,
-                    "Value": "Super bowl"
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "Question": {
-                "Question": "Both arms outstretched by the umpire means?",
-                "AttachedElement": {
-                    "Type": 1,
-                    "Value": ""
-                }
-            },
-            "Options": [
-                {
-                    "Type": 1,
-                    "Value": "A no ball"
-                },
-                {
-                    "Type": 1,
-                    "Value": "A wide ball"
-                },
-                {
-                    "Type": 1,
-                    "Value": "A dead ball"
-                },
-                {
-                    "Type": 1,
-                    "Value": "Leg bye"
+                    "Value": "Asam"
                 }
             ]
         }
@@ -60,11 +32,7 @@
     "Answers": [
         {
             "QuestionId": 1,
-            "Answer": 2
-        },
-        {
-            "QuestionId": 2,
-            "Answer": 2
+            "Answer": 3
         }
     ]
 }

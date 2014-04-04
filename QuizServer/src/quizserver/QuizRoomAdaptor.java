@@ -38,14 +38,13 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
     private byte QUIZ_TYPE = QuizType.POLITICS;
     private int StartQuizFlag = 0;
     private boolean HasAnyUserLeftTheRoom=false;
+    
     public QuizRoomAdaptor(IZone izone, IRoom room) {
         this.izone = izone;
         this.gameRoom = room;
         GAME_STATUS = QuizConstants.STOPPED;
         try {
-            String json = ((Room) this.gameRoom).getProperties();
-            JSONObject jsonObject = new JSONObject(json);
-            if (jsonObject.getString("QuizTopic").equalsIgnoreCase("Politics")) {
+            if (((Room) this.gameRoom).getProperties().get("QuizTopic").toString().equalsIgnoreCase("Politics")) {
                 QUIZ_TYPE = QuizType.POLITICS;
             } else {
                 QUIZ_TYPE = QuizType.CRICKET;
@@ -120,7 +119,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor {
     }
 
     @Override
-    public void handleTimerTick(long time) {
+    public void onTimerTick(long time) {
         /*
          * A game when room full
          * or we can say max users are equals to joined users

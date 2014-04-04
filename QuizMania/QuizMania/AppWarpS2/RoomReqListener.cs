@@ -133,5 +133,11 @@ namespace QuizMania
         {
           
         }
+
+
+        public void onInvokeRoomRPCDone(RPCEvent rpcEvent)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }

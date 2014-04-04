@@ -69,5 +69,11 @@ namespace QuizMania
         {
            
         }
+
+
+        public void onInvokeZoneRPCDone(com.shephertz.app42.gaming.multiplayer.client.events.RPCEvent rpcEvent)
+        {
+           // throw new NotImplementedException();
+        }
     }
 }
